@@ -26,15 +26,15 @@ Un ingrediente debe contar con la siguiente información:
 
 Las funcionalidades que debe tener la aplicación son las siguientes:
 
-    - Crear una receta. ✔
-    - Modificar una receta. ✔
-    - Eliminar una receta. ✔
-    - Mostrar “receta del día” aleatoria en la ventana principal. ⭐
-    * Buscar y/o filtrar recetas:
-        - Nombre. ⭐
-        - Por etiquetas. ⭐
-        - Tiempo de preparación. ⭐
-        - Ingredientes. ⭐
+- Crear una receta. ✔
+- Modificar una receta. ✔
+- Eliminar una receta. ✔
+- Mostrar “receta del día” aleatoria en la ventana principal. ⭐
+* Buscar y/o filtrar recetas:
+    - Nombre. ⭐
+    - Por etiquetas. ⭐
+    - Tiempo de preparación. ⭐
+    - Ingredientes. ⭐
 
 Deberá contar con las siguientes vistas:
 
