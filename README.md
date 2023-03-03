@@ -30,7 +30,7 @@ Las funcionalidades que debe tener la aplicación son las siguientes:
     - Modificar una receta. ✔
     - Eliminar una receta. ✔
     - Mostrar “receta del día” aleatoria en la ventana principal. ⭐
-    *   Buscar y/o filtrar recetas:
+    * Buscar y/o filtrar recetas:
         - Nombre. ⭐
         - Por etiquetas. ⭐
         - Tiempo de preparación. ⭐
