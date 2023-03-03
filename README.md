@@ -1,5 +1,5 @@
 # RECETARIO-with-Python-Tkinter
-> Proyecto basado en python junto a una interfaz gráfica con la libreria TKinter para la Universidad Provincial de Administración, Tecnología y Oficios.
+> Proyecto basado en python junto a una interfaz gráfica con la libreria TKinter para la Universidad Provincial de Administración, Tecnología y Oficios. (UPATecO)
 
 ## Recetario de cocina
 Para este proyecto se deberá diseñar una aplicación de escritorio en la que puedan crear, editar y eliminar recetas.
