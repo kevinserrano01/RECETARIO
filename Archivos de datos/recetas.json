@@ -1,0 +1,66 @@
+{
+    "nombre": "Risotto de Cabalaza",
+    "ingredientes": [
+        {
+            "nombre": "arroz",
+            "cantidad": 150,
+            "UnidadMedida": "gr"
+        },
+        {
+            "nombre": "Calabaza",
+            "cantidad": 200,
+            "UnidadMedida": "gr"
+        },
+        {
+            "nombre": "cebolla",
+            "cantidad": 1,
+            "UnidadMedida": "unidad"
+        },
+        {
+            "nombre": "Caldo",
+            "cantidad": 0.5,
+            "UnidadMedida": "litros"
+        },
+        {
+            "nombre": "vino blanco",
+            "cantidad": 1,
+            "UnidadMedida": "vaso"
+        },
+        {
+            "nombre": "manteca",
+            "cantidad": 1,
+            "UnidadMedida": "cucharita"
+        },
+        {
+            "nombre": "Queso parmesano",
+            "cantidad": 30,
+            "UnidadMedida": "gr"
+        },
+        {
+            "nombre": "Sal",
+            "cantidad": 1,
+            "UnidadMedida": "cucharita"
+        },
+        {
+            "nombre": "Pimienta",
+            "cantidad": 1,
+            "UnidadMedida": "cucharita"
+        }
+    ],
+    "pasos": [
+        "paso 1",
+        "paso 2",
+        "paso 3",
+        "paso 4",
+        "paso 5",
+        "paso 6"
+    ],
+    "preparacion": 60,
+    "coccion": 30,
+    "fecha_creacion": "<attribute 'day' of 'datetime.date' objects>/<attribute 'month' of 'datetime.date' objects>/<attribute 'year' of 'datetime.date' objects>",
+    "etiquetas": [
+        "Risotto",
+        "Calabaza"
+    ],
+    "favorita": true
+}

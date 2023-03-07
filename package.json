@@ -1,0 +1,19 @@
+{
+  "name": "recetario-project",
+  "version": "1.0.0",
+  "description": "> Proyecto basado en python junto a una interfaz gráfica con la libreria TKinter para la Universidad Provincial de Administración, Tecnología y Oficios. (UPATecO)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomiiPorrini/Recetario-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomiiPorrini/Recetario-Project/issues"
+  },
+  "homepage": "https://github.com/TomiiPorrini/Recetario-Project#readme"
+}
