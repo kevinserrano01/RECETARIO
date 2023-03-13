@@ -1,0 +1,97 @@
+{
+    "recetas": [
+        {
+            "nombre": "Pastel de chocolate",
+            "ingredientes": [
+                {
+                    "nombre": "Chocolate negro",
+                    "cantidad": 200,
+                    "unidad": "gramos"
+                },
+                {
+                    "nombre": "Mantequilla",
+                    "cantidad": 200,
+                    "unidad": "gramos"
+                },
+                {
+                    "nombre": "Azucar",
+                    "cantidad": 200,
+                    "unidad": "gramos"
+                },
+                {
+                    "nombre": "Huevos",
+                    "cantidad": 4,
+                    "unidad": "unidades"
+                }
+            ],
+            "preparacion": [
+                "Precalentar el horno a 180 grados Celsius.",
+                "Fundir el chocolate y la mantequilla al banioo maria.",
+                "Batir los huevos con el azucar hasta que esten espumosos.",
+                "Aniadir la mezcla de chocolate y mantequilla a los huevos y mezclar bien.",
+                "Verter la mezcla en un molde previamente engrasado y hornear durante 30 minutos.",
+                "Dejar enfriar antes de desmoldar."
+            ],
+            "imagen": "images/EmpanadasArabes.jpg",
+            "tiempo_preparacion": 20,
+            "tiempo_coccion": 30,
+            "fecha_creacion": "2022-03-09T12:00:00Z",
+            "etiquetas": [
+                "postres",
+                "chocolate",
+                "facil"
+            ],
+            "favorita": false
+        },
+        {
+            "nombre": "Arroz con pollo",
+            "ingredientes": [
+                {
+                    "nombre": "Arroz",
+                    "cantidad": 2,
+                    "unidad": "tazas"
+                },
+                {
+                    "nombre": "Pollo",
+                    "cantidad": 1,
+                    "unidad": "libras"
+                },
+                {
+                    "nombre": "Cebolla",
+                    "cantidad": 1,
+                    "unidad": "unidades"
+                },
+                {
+                    "nombre": "Ajo",
+                    "cantidad": 2,
+                    "unidad": "dientes"
+                },
+                {
+                    "nombre": "Pimiento",
+                    "cantidad": 1,
+                    "unidad": "unidades"
+                }
+            ],
+            "preparacion": [
+                "En una olla grande, calentar el aceite a fuego medio.",
+                "Agregar el pollo y dorar por ambos lados.",
+                "Agregar la cebolla, el ajo y el pimiento y cocinar hasta que esten suaves.",
+                "Agregar el arroz y mezclar bien.",
+                "Agregar suficiente agua para cubrir el arroz (aproximadamente 4 tazas).",
+                "Llevar a ebullicion y reducir el fuego a bajo.",
+                "Cocinar tapado durante 20 minutos.",
+                "Retirar del fuego y dejar reposar durante 10 minutos antes de servir."
+            ],
+            "imagen": "images/Tallarines-a-la-marinera.png",
+            "tiempo_preparacion": 30,
+            "tiempo_coccion": 20,
+            "fecha_creacion": "2022-03-10T14:30:00Z",
+            "etiquetas": [
+                "arroz",
+                "pollo",
+                "plato principal"
+            ],
+            "favorita": true
+        }
+    ]
+}
