@@ -17,7 +17,7 @@ class VentanaPrincipal(ttk.Frame):
         parent.title('RECETA DEL DIA')
         parent.geometry('400x500')
         nombre = receta['nombre']
-        title = f'Titulo: {nombre}'
+        title = f'{nombre} '
         label = tk.Label(self.parent, text=title, justify='left', font='bold')
         label.pack()
         # imagen
