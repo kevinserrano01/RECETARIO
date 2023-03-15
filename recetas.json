@@ -34,7 +34,7 @@
         "imagen": "images/pastelDeChocolate.jpg",
         "tiempo_preparacion": 20,
         "tiempo_coccion": 30,
-        "fecha_creacion": "2022-03-09",
+        "fecha_creacion": "2022/03/09",
         "etiquetas": [
             "postres",
             "chocolate",
@@ -84,7 +84,7 @@
         "imagen": "images/arrozConPollo.png",
         "tiempo_preparacion": 30,
         "tiempo_coccion": 20,
-        "fecha_creacion": "2022-03-10",
+        "fecha_creacion": "2022/03/10",
         "etiquetas": [
             "arroz",
             "pollo",
@@ -134,7 +134,7 @@
         "imagen": "images/EmpanadasArabes.jpg",
         "tiempo_preparacion": 40,
         "tiempo_coccion": 15,
-        "fecha_creacion": "2022-03-10",
+        "fecha_creacion": "2022/03/10",
         "etiquetas": [
             "empanadas",
             "arabes",
