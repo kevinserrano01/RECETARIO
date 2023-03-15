@@ -24,9 +24,13 @@ class VentanaPrincipal(ttk.Frame):
         self.canvas = Canvas(self.parent, width=300, height=300)
         self.canvas.pack()
         imagen = Image.open(receta['imagen'])
-        imagen = imagen.resize((300, 250))
-        self.imagen_tk = ImageTk.PhotoImage(imagen)
-        self.canvas.create_image(0, 0, anchor=NW, image=self.imagen_tk)
+        if imagen != "":
+            imagen = imagen.resize((300, 250))
+            self.imagen_tk = ImageTk.PhotoImage(imagen)
+            self.canvas.create_image(0, 0, anchor=NW, image=self.imagen_tk)
+        else:
+            #no contiene una imagen guardada
+            tk.Label(self.parent, text="No hay imagen para esta receta.")
         # buttons que abren otra ventana
         self.ingredientes = receta['ingredientes']
         btnIngreditnes = tk.Button(self.parent, text="Ingredientes", command=self.abrir_ventanaIng)
@@ -111,16 +115,18 @@ class SecundariaPasos(ttk.Frame):
         
     def mostrar_pasos(self, pasos):
         """Printea los pasos en la ventana."""
-        # tabla = ttk.Treeview(self.parent, columns=("#1")).grid()
-        # tabla.column("#0", width=80, anchor=CENTER)
-        # tabla.column("#1", width=80, anchor=CENTER)
+        tabla = ttk.Treeview(self.parent, columns=2)
+        tabla.grid(padx=20, pady=20)
+        tabla.column("#0", anchor=CENTER)
+        tabla.column("#1", width=70, anchor=CENTER)
         
-        # tabla.heading("#0", text ="Indice", anchor=CENTER)
-        # tabla.heading("#1", text ="Descripcion", anchor=CENTER)
+        tabla.heading("#0", text ="Indice", anchor=CENTER)
+        tabla.heading("#1", text ="Descripcion", anchor=CENTER)
+        
         i = 1
         for paso in pasos:
-            texto = f"paso {i} - {paso.capitalize()}"
+            print(paso)
+            tabla.insert('', END,values=i , text=paso)
             i += 1
-            tk.Label(self.parent, text = texto).grid()
 
     
