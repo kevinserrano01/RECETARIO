@@ -35,13 +35,19 @@ def eliminar_receta():
 def modificar_receta():
     pass
 
+def tomarDatos():
+    with open('./Archivos de datos/recetas.json', 'r') as file:
+        return json.load(file)
+    
+     
+    
 # Leemos el archivo JSON y guardamos sus datos en la variable 'data' para manipularlo
-with open('recetas.json', 'r') as file:
-    data = json.load(file) 
+with open('./Archivos de datos/recetas.json', 'r') as file:
+    data = json.load(file)
 
 # Creamos un mini menu para que seleccione el usuario que receta quiere ver.
-print('Menu: \n0- Pastel de chocolate \n1- Arroz con pollo')
-op = int(input('Ingrese una opcion: '))
+# print('Menu: \n0- Pastel de chocolate \n1- Arroz con pollo')
+# op = int(input('Ingrese una opcion: '))
 
 # llamamos a la funcion y le pasamos por parametro el objeto con su indice elegido por el usuario
-mostrar_receta(data, op)
+# mostrar_receta(data, op)

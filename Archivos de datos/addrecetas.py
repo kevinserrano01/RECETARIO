@@ -18,3 +18,6 @@ receta={'nombre': nombre, 'ingredientes':ingredientes, 'pasos': pasos,
 
 with open('recetas.json', 'w') as archivo:
     json.dump(receta, archivo)
+
+def funcion():
+        pass
