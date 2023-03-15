@@ -31,9 +31,9 @@ class VentanaPrincipal(ttk.Frame):
     
     def recetaDia(self):
         recetas = self._read(self.ruta)
-        # index = r.randint(0, len(recetas))
+        index = r.randint(0, len(recetas)-1)
         toplevel = tk.Toplevel(self.parent)
-        recetaDelDia(toplevel, recetas[1])
+        recetaDelDia(toplevel, recetas[index]).grid()
 
 root = tk.Tk()
 VentanaPrincipal(root).grid()

@@ -18,10 +18,10 @@ class VentanaPrincipal(ttk.Frame):
         parent.geometry('400x500')
         nombre = receta['nombre']
         title = f'Titulo: {nombre}'
-        label = tk.Label(self, text=title, justify='left', font='bold')
+        label = tk.Label(self.parent, text=title, justify='left', font='bold')
         label.pack()
         # imagen
-        self.canvas = Canvas(self, width=300, height=300)
+        self.canvas = Canvas(self.parent, width=300, height=300)
         self.canvas.pack()
         imagen = Image.open(receta['imagen'])
         imagen = imagen.resize((300, 250))
@@ -29,26 +29,28 @@ class VentanaPrincipal(ttk.Frame):
         self.canvas.create_image(0, 0, anchor=NW, image=self.imagen_tk)
         # buttons que abren otra ventana
         self.ingredientes = receta['ingredientes']
-        btnIngreditnes = tk.Button(self, text="Ingredientes", command=self.abrir_ventanaIng)
+        btnIngreditnes = tk.Button(self.parent, text="Ingredientes", command=self.abrir_ventanaIng)
         btnIngreditnes.pack()
         self.pasos = receta['preparacion']
-        btnPreparacion = tk.Button(self, text="Pasos Preparacion",command=self.abrir_ventanaPasos)
+        btnPreparacion = tk.Button(self.parent, text="Pasos Preparacion",command=self.abrir_ventanaPasos)
         btnPreparacion.pack()
-        # Textos
+        # tiempo de coccion
         time_coccion = receta['tiempo_coccion']
-        label = tk.Label(self, text=f"Tiempo de coccion: {time_coccion}", justify='left')
+        label = tk.Label(self.parent, text=f"Tiempo de coccion: {time_coccion}", justify='left')
         label.pack()
+        # fecha de creacion
         fecha = receta['fecha_creacion']
         fecha_creacion = f'Fecha de creacion: {fecha}'
-        label = tk.Label(self, text=fecha_creacion, justify='left')
+        label = tk.Label(self.parent, text=fecha_creacion, justify='left')
         label.pack()
+        # tiempo de preparacion
         preparacion = receta['tiempo_preparacion']
         time_coccion = f'Tiempo de preparacion: {preparacion}'
-        label = tk.Label(self, text=time_coccion, justify='left')
+        label = tk.Label(self.parent, text=time_coccion, justify='left')
         label.pack()
+        # es favorita
         favorita = receta['favorita']
-        fav = f'Favorita: {favorita}'
-        label = tk.Label(self, text=fav, justify='left')
+        label = tk.Label(self.parent, text=f"Es favorita: {'Sí' if favorita else 'No'}", justify='left')
         label.pack()
         
     def abrir_ventanaIng(self):
