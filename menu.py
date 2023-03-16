@@ -15,6 +15,11 @@ class VentanaPrincipal(ttk.Frame):
         parent.title('Menú RECETARIO')
         parent.resizable(False, False)
         self.ruta = "recetas.json"
+        # Poner icono en la ventana principal
+        # self.icon = tk.PhotoImage(file=icon)
+        # self.set_icon()
+        # self.parent.iconphoto(True, self.icon)
+        
         
         # MENU
         ttk.Button(self.parent, text="Mostrar recetas", command="").grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
@@ -25,6 +30,9 @@ class VentanaPrincipal(ttk.Frame):
         bottonExit = ttk.Button(self.parent, text="Cerrar", command=parent.destroy)
         bottonExit.grid(row=10, column=2, ipadx=60)
     
+    # def set_icon(self):
+    #     self.parent.iconphoto(True, self.icon)
+
     def _read(self):
         """Lee el archivo JSON"""
         with open(self.ruta, 'r') as archivo:

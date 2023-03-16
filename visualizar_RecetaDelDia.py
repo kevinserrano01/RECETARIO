@@ -120,13 +120,10 @@ class SecundariaPasos(ttk.Frame):
         tabla.column("#0", width=70 ,anchor=CENTER)
         tabla.column("#1", width=500, anchor=CENTER)
         
-        tabla.heading("#0", text ="Indice", anchor=CENTER)
+        tabla.heading("#0", text ="Pasos", anchor=CENTER)
         tabla.heading("#1", text ="Descripcion", anchor=CENTER)
         
         i = 1
         for paso in pasos:
-            
             tabla.insert('', END, text=i, values=paso)
             i += 1
-
-    
