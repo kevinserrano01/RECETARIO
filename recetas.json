@@ -124,12 +124,12 @@
         "preparacion": [
             "colocar la harina y la sal en la mesada en forma de corona.",
             "Agregar el aceite de oliva, la levadura fresca y el agua para empezar a amasar.",
-            "El bollo estará listo una vez que esté liso. Hacer pequeños bollos de unos 100 gramos.",
-            "Mezclar en un bol carne picada, cebolla picada, tomate en cubos, morrón rojo picado, cebolla de verdeo, jugo y ralladura de limón, salsa de tomate.",
-            "Agregar también sal y especias a gusto.",
-            "Estirar los bollos con un palo de amasar en círculos de unos 15 centímetros.",
+            "El bollo estar\u00c3\u00a1 listo una vez que est\u00c3\u00a9 liso. Hacer peque\u00c3\u00b1os bollos de unos 100 gramos.",
+            "Mezclar en un bol carne picada, cebolla picada, tomate en cubos, morr\u00c3\u00b3n rojo picado, cebolla de verdeo, jugo y ralladura de lim\u00c3\u00b3n, salsa de tomate.",
+            "Agregar tambi\u00c3\u00a9n sal y especias a gusto.",
+            "Estirar los bollos con un palo de amasar en c\u00c3\u00adrculos de unos 15 cent\u00c3\u00admetros.",
             "Cerrar doblando los bordes hacia el centro.",
-            "colocar una placa levemente aceitada y llevar al horno a 180º por unos 15 minutos"
+            "colocar una placa levemente aceitada y llevar al horno a 180\u00c2\u00ba por unos 15 minutos"
         ],
         "imagen": "images/EmpanadasArabes.jpg",
         "tiempo_preparacion": 40,
@@ -141,5 +141,41 @@
             "casero"
         ],
         "favorita": true
+    },
+    {
+        "nombre": "Risoto inventado",
+        "ingredientes": [
+            {
+                "nombre": "arroz",
+                "cantidad": "1",
+                "unidad": "taza"
+            },
+            {
+                "nombre": "sal",
+                "cantidad": "1",
+                "unidad": "cuchara"
+            },
+            {
+                "nombre": "agua",
+                "cantidad": "200",
+                "unidad": "ml"
+            }
+        ],
+        "preparacion": [
+            "hervir agua",
+            "colocar sal al agua",
+            "colocar el arroz",
+            "despues de 10 minutos colar el arroz"
+        ],
+        "imagen": "",
+        "tiempo_preparacion": 5,
+        "tiempo_coccion": 10,
+        "fecha_creacion": "2023/3/15",
+        "etiquetas": [
+            "facil",
+            "risoto",
+            "casero"
+        ],
+        "favorita": false
     }
 ]

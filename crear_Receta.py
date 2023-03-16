@@ -67,7 +67,6 @@ class App(ttk.Frame):
         """funcion para cargar una receta en un archivo json
         Se leerá, y se hará un append a esa lista obtenida al leer"""
         data = self._read() #data del archivo.
-        
         if self.validacionCampos():
             #campos correctos, entonces se agrega.
             try:
@@ -83,16 +82,22 @@ class App(ttk.Frame):
                             'etiquetas': self.etiquetas.get().split(', '),
                             'favorita':self.fav.get()
                             }
+                
                 print(recetaNueva)
-                # al terminar la carga, se cierra la ventana con un cartel de info
-                messagebox.showinfo(message="Todos los datos estan correctos, se guardó la nueva receta.")
-                self.parent.destroy()
+                # se agrega el archivo al json
+                data.append(recetaNueva)
+                try: 
+                    with open(self.ruta, 'w') as archivo:
+                        json.dump(data, archivo)
+                    
+                    messagebox.showinfo(message="Todos los datos estan correctos, se guardó la nueva receta.")
+                except:
+                    messagebox.showerror(message="Ha habido un error en el guardado.")
+                    
             except:
                 messagebox.showerror(message="Ha habido un error. Por favor, vuelva a intentar")
-                self.parent.destroy()
+        self.parent.destroy()
             
-            
-    
     def validacionCampos(self):
         if self.nombre.get() == "":
             messagebox.showerror(message="El campo nombre está vacio")
