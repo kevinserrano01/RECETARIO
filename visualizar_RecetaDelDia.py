@@ -1,7 +1,9 @@
 from tkinter import *
-from tkinter import ttk, messagebox
+from tkinter import messagebox
 import tkinter as tk
 from PIL import ImageTk, Image
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 import datetime
 import json
 
@@ -33,11 +35,11 @@ class VentanaPrincipal(ttk.Frame):
             tk.Label(self.parent, text="No hay imagen para esta receta.").pack()
         # buttons que abren otra ventana
         self.ingredientes = receta['ingredientes']
-        btnIngreditnes = tk.Button(self.parent, text="Ingredientes", command=self.abrir_ventanaIng)
-        btnIngreditnes.pack()
+        btnIngreditnes = ttk.Button(self.parent, text="Ingredientes", bootstyle="info-outline", command=self.abrir_ventanaIng)
+        btnIngreditnes.pack(pady=5)
         self.pasos = receta['preparacion']
-        btnPreparacion = tk.Button(self.parent, text="Pasos Preparacion",command=self.abrir_ventanaPasos)
-        btnPreparacion.pack()
+        btnPreparacion = ttk.Button(self.parent, text="Pasos Preparacion",bootstyle="info-outline", command=self.abrir_ventanaPasos)
+        btnPreparacion.pack(pady=5)
         # tiempo de coccion
         time_coccion = receta['tiempo_coccion']
         label = tk.Label(self.parent, text=f"Tiempo de coccion: {time_coccion}", justify='left')

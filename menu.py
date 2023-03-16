@@ -1,5 +1,7 @@
-from tkinter import ttk
+# from tkinter import ttk
 import tkinter as tk
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 import random as r
 import json
 #para crear una visualizacion de una receta especifica.
@@ -15,21 +17,24 @@ class VentanaPrincipal(ttk.Frame):
         self.parent = parent
         parent.title('Menú RECETARIO')
         parent.resizable(False, False)
+        parent.configure(bg='black')
         self.ruta = "recetas.json"
+
         # Poner icono en la ventana principal
         # self.icon = tk.PhotoImage(file=icon)
         # self.set_icon()
         # self.parent.iconphoto(True, self.icon)
         
-        
         # MENU
-        ttk.Button(self.parent, text="Mostrar recetas", command="").grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
-        ttk.Button(self.parent, text="Mostrar receta del dia", command=self.recetaDia).grid(row=1, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
-        ttk.Button(self.parent, text="Agregar Receta", command=self.crear_receta).grid(row=2, column=2, columnspan=2, padx=10, pady=10, ipadx=15)
-        ttk.Button(self.parent, text="Modificar Receta", command="").grid(row=3, column=2, columnspan=2, padx=10, pady=10, ipadx=10)
-        ttk.Button(self.parent, text="Eliminar Receta", command=self.eliminar_receta).grid(row=4, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
-        bottonExit = ttk.Button(self.parent, text="Cerrar", command=parent.destroy)
-        bottonExit.grid(row=10, column=2, ipadx=60)
+        ttk.Button(self.parent, text="Mostrar recetas", bootstyle="info-outline", command="").grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
+        ttk.Button(self.parent, text="Mostrar receta del dia", bootstyle="info-outline", command=self.recetaDia).grid(row=1, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
+        ttk.Button(self.parent, text="Agregar Receta", bootstyle="info-outline", command=self.crear_receta).grid(row=2, column=2, columnspan=2, padx=10, pady=10, ipadx=15)
+        ttk.Button(self.parent, text="Modificar Receta", bootstyle="info-outline", command="").grid(row=3, column=2, columnspan=2, padx=10, pady=10, ipadx=10)
+        ttk.Button(self.parent, text="Eliminar Receta", bootstyle="info-outline", command=self.eliminar_receta).grid(row=4, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
+        separador = ttk.Separator(bootstyle="info")
+        separador.grid(row=10, column=2, ipadx=150)
+        bottonExit = ttk.Button(self.parent, text="Cerrar", bootstyle="danger", command=parent.destroy)
+        bottonExit.grid(row=11, column=2, ipadx=60, pady=20)
     
     # def set_icon(self):
     #     self.parent.iconphoto(True, self.icon)
