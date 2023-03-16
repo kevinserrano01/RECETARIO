@@ -43,56 +43,6 @@
         "favorita": false
     },
     {
-        "nombre": "Arroz con pollo",
-        "ingredientes": [
-            {
-                "nombre": "Arroz",
-                "cantidad": 2,
-                "unidad": "tazas"
-            },
-            {
-                "nombre": "Pollo",
-                "cantidad": 1,
-                "unidad": "libras"
-            },
-            {
-                "nombre": "Cebolla",
-                "cantidad": 1,
-                "unidad": "unidades"
-            },
-            {
-                "nombre": "Ajo",
-                "cantidad": 2,
-                "unidad": "dientes"
-            },
-            {
-                "nombre": "Pimiento",
-                "cantidad": 1,
-                "unidad": "unidades"
-            }
-        ],
-        "preparacion": [
-            "En una olla grande, calentar el aceite a fuego medio.",
-            "Agregar el pollo y dorar por ambos lados.",
-            "Agregar la cebolla, el ajo y el pimiento y cocinar hasta que esten suaves.",
-            "Agregar el arroz y mezclar bien.",
-            "Agregar suficiente agua para cubrir el arroz (aproximadamente 4 tazas).",
-            "Llevar a ebullicion y reducir el fuego a bajo.",
-            "Cocinar tapado durante 20 minutos.",
-            "Retirar del fuego y dejar reposar durante 10 minutos antes de servir."
-        ],
-        "imagen": "images/arrozConPollo.png",
-        "tiempo_preparacion": 30,
-        "tiempo_coccion": 20,
-        "fecha_creacion": "2022/03/10",
-        "etiquetas": [
-            "arroz",
-            "pollo",
-            "plato principal"
-        ],
-        "favorita": true
-    },
-    {
         "nombre": "Empanadas Arabes",
         "ingredientes": [
             {

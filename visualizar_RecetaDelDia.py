@@ -117,13 +117,13 @@ class SecundariaPasos(ttk.Frame):
         """Printea los pasos en la ventana."""
         tabla = ttk.Treeview(self.parent, columns=2)
         tabla.grid(padx=20, pady=20)
-        tabla.column("#0", width=70 ,anchor=CENTER)
-        tabla.column("#1", width=500, anchor=CENTER)
+        tabla.column("#0", width=500, anchor=CENTER)
+        tabla.column("#1", width=70 ,anchor=CENTER)
         
-        tabla.heading("#0", text ="Pasos", anchor=CENTER)
-        tabla.heading("#1", text ="Descripcion", anchor=CENTER)
+        tabla.heading("#0", text ="Descripcion", anchor=CENTER)
+        tabla.heading("#1", text ="Pasos", anchor=CENTER)
         
         i = 1
         for paso in pasos:
-            tabla.insert('', END, text=i, values=paso)
+            tabla.insert('', END, text=paso, values=i)
             i += 1

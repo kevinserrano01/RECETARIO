@@ -27,7 +27,7 @@ class VentanaPrincipal(ttk.Frame):
         ttk.Button(self.parent, text="Mostrar receta del dia", command=self.recetaDia).grid(row=1, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
         ttk.Button(self.parent, text="Agregar Receta", command=self.crear_receta).grid(row=2, column=2, columnspan=2, padx=10, pady=10, ipadx=15)
         ttk.Button(self.parent, text="Modificar Receta", command="").grid(row=3, column=2, columnspan=2, padx=10, pady=10, ipadx=10)
-        ttk.Button(self.parent, text="Eliminar Receta", command=self.eliminar_receta('Arroz con pollo')).grid(row=4, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
+        ttk.Button(self.parent, text="Eliminar Receta", command=self.eliminar_receta).grid(row=4, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
         bottonExit = ttk.Button(self.parent, text="Cerrar", command=parent.destroy)
         bottonExit.grid(row=10, column=2, ipadx=60)
     
@@ -51,16 +51,10 @@ class VentanaPrincipal(ttk.Frame):
         toplevel = tk.Toplevel(self.parent)
         crearReceta(toplevel, self.ruta)
 
-    def eliminar_receta(self, receta_a_eliminar):
+    def eliminar_receta(self):
         """Funcion para eliminar una receta deseada por el usuario del archivo JSON"""
-        recetas = self._read()
-        for i, receta in enumerate(recetas):
-            # print(receta['nombre'])
-            if receta['nombre'] == receta_a_eliminar:
-                recetas.pop(i)
-                break
-        with open('recetas.json', 'w') as file:
-            json.dump(recetas, file)
+        toplevel = tk.Toplevel(self.parent)
+        eliminarReceta(toplevel, self.ruta)
 
 #funcionamiento
 root = tk.Tk()

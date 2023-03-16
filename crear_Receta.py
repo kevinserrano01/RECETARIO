@@ -46,17 +46,22 @@ class App(ttk.Frame):
 
         btn_guardar = ttk.Button(self.parent, text="Guardar", padding=3, command=self._write)
         btn_guardar.grid(row=9, column=2)
-        
-        ttk.Label(self.parent, text="Los campos con * son obligatorios", padding=3).grid(row=10, columnspan=3)
-        ttk.Label(self.parent, text="Los ingredientes se deben agregan con un formato (nombre cantidad unidad de medida) y todos seguidos, separados por coma y un espacio", padding=3).grid(row=11, columnspan=3)
-        ttk.Label(self.parent, text="Ejemplo: Arroz 20 gramos, Sal 1 pizca", padding=3).grid(row=12, columnspan=3)
-        ttk.Label(self.parent, text="Los pasos se deben agregan separados por coma", padding=3).grid(row=13, columnspan=3)
-        ttk.Label(self.parent, text="Ejemplo: Amazar 10 minutos, estirar en una tabla redonda", padding=3).grid(row=14, columnspan=3)
-        ttk.Label(self.parent, text="Las etiquetas deben estar separadas por coma y un espacio", padding=3).grid(row=15, columnspan=3)
-        ttk.Label(self.parent, text="Ejemplo: Facil, Rissoto, Arroz", padding=3).grid(row=16, columnspan=3)
-
-        
-        parent.bind('<Return>', lambda e: btn_guardar.invoke()) 
+        texto = '''
+Los campos con * son obligatorios
+Los ingredientes se deben agregan con un formato como el siguiente ejemplo:
+    Ejemplo: Arroz 20 gramos, Sal 1 pizca.
+Los pasos se deben agregan separados por coma, como en este ejemplo:
+    Ejemplo: Amazar 10 minutos, estirar en una tabla redonda.
+Las etiquetas deben estar separadas por coma y un espacio, así:
+    Ejemplo: Facil, Rissoto, Arroz.
+        '''
+        ttk.Label(self.parent, text=texto, padding=3).grid(row=10, columnspan=3, padx=10)
+        # ttk.Label(self.parent, text="Los ingredientes se deben agregan con un formato (nombre cantidad unidad de medida) y todos seguidos, separados por coma y un espacio", padding=3).grid(row=11, columnspan=3)
+        # ttk.Label(self.parent, text="Ejemplo: Arroz 20 gramos, Sal 1 pizca", padding=3).grid(row=12, columnspan=3)
+        # ttk.Label(self.parent, text="Los pasos se deben agregan separados por coma", padding=3).grid(row=13, columnspan=3)
+        # ttk.Label(self.parent, text="Ejemplo: Amazar 10 minutos, estirar en una tabla redonda", padding=3).grid(row=14, columnspan=3)
+        # ttk.Label(self.parent, text="Las etiquetas deben estar separadas por coma y un espacio", padding=3).grid(row=15, columnspan=3)
+        # ttk.Label(self.parent, text="Ejemplo: Facil, Rissoto, Arroz", padding=3).grid(row=16, columnspan=3)
 
     def _read(self):
         """Lee el archivo JSON"""
