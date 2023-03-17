@@ -18,7 +18,7 @@ class Principal(ttk.Frame):
         ttk.Label(self.parent, text="Ingrese el nombre de la receta a modificar: ").grid(row=1, column=0,padx= 10, pady=20)
         ttk.Entry(self.parent, textvariable=self.recetaAModificar ).grid(row=1, column=2, padx=10, pady=20)
         
-        ttk.Button(self.parent, text="Eliminar", bootstyle="info", command=self._eliminar).grid(row=2, column=1, columnspan=2)
+        ttk.Button(self.parent, text="Modificar", bootstyle="info", command=self._eliminar).grid(row=2, column=1, columnspan=2)
 
     def _read(self):
         """Lee el archivo JSON"""
@@ -35,20 +35,21 @@ class Principal(ttk.Frame):
         Se leerá, y se modificara esa receta de la lista obtenida al leer"""
         data = self._read() #data del archivo.
         
-        # buscado = self._buscarReceta()
-        # if buscado != int(-1):#La receta existe, entonces se modificara.
-        #     #se ejecuta la eliminacion a traves del metodo pop(indice)
-        #     recetaEliminada = data.pop(buscado)
-        #     try:
-        #         #se escribe de nuevo el archivo.
-        #         self._write(data)
-        #         messagebox.showinfo(message=f"Se encontró la receta a modificar '{recetaEliminada['nombre']}'")
-        #         self.parent.destroy()
-        #     except:
-        #         messagebox.showerror(message=f"Hubo un error al modificar la receta.\nIntente nuevamente.")
-        #         self.parent.destroy()
-        # else:#no esta la receta en la lista.
-        #     messagebox.showinfo(message=f"No se encontro la receta '{self.recetaAModificar.get()}'")
+        buscado = self._buscarReceta()
+        if buscado != int(-1):#La receta existe, entonces se modificara.
+            # ================================================================================================================
+            # Aqui se deberia Abrir otra ventana y modificar la receta dato por dato =========================================
+            # ================================================================================================================
+            try:
+                #se escribe de nuevo el archivo.
+                self._write(data)
+                messagebox.showinfo(message=f"Se encontró la receta a modificar")
+                self.parent.destroy()
+            except:
+                messagebox.showerror(message=f"Hubo un error al modificar la receta.\nIntente nuevamente.")
+                self.parent.destroy()
+        else:#no esta la receta en la lista.
+            messagebox.showinfo(message=f"No se encontro la receta que desea modificar'{self.recetaAModificar.get()}'")
             
     def _buscarReceta(self):
         """Funcion para buscar si una receta existe en un archivo JSON.

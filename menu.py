@@ -68,7 +68,8 @@ class VentanaPrincipal(ttk.Frame):
         modificarReceta(toplevel, self.ruta)
 
     def mostrar_recetas(self):
-        print('Aqui van todas las recetas')
+        """Funcion para mostrar todas las recetas"""
+        print('Recetas: ')
 
 
 #funcionamiento
