@@ -8,6 +8,7 @@ import json
 from visualizar_RecetaDelDia import VentanaPrincipal as recetaDelDia
 from crear_Receta import App as crearReceta
 from eliminar_Receta import Principal as eliminarReceta
+from modificar_Receta import Principal as modificarReceta
 
 
 class VentanaPrincipal(ttk.Frame):
@@ -26,10 +27,10 @@ class VentanaPrincipal(ttk.Frame):
         # self.parent.iconphoto(True, self.icon)
         
         # MENU
-        ttk.Button(self.parent, text="Mostrar recetas", bootstyle="info-outline", command="").grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
+        ttk.Button(self.parent, text="Mostrar recetas", bootstyle="info-outline", command=self.mostrar_recetas).grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
         ttk.Button(self.parent, text="Mostrar receta del dia", bootstyle="info-outline", command=self.recetaDia).grid(row=1, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
         ttk.Button(self.parent, text="Agregar Receta", bootstyle="info-outline", command=self.crear_receta).grid(row=2, column=2, columnspan=2, padx=10, pady=10, ipadx=15)
-        ttk.Button(self.parent, text="Modificar Receta", bootstyle="info-outline", command="").grid(row=3, column=2, columnspan=2, padx=10, pady=10, ipadx=10)
+        ttk.Button(self.parent, text="Modificar Receta", bootstyle="info-outline", command=self.modificar_receta).grid(row=3, column=2, columnspan=2, padx=10, pady=10, ipadx=10)
         ttk.Button(self.parent, text="Eliminar Receta", bootstyle="info-outline", command=self.eliminar_receta).grid(row=4, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
         separador = ttk.Separator(bootstyle="info")
         separador.grid(row=10, column=2, ipadx=150)
@@ -60,6 +61,15 @@ class VentanaPrincipal(ttk.Frame):
         """Funcion para eliminar una receta deseada por el usuario del archivo JSON"""
         toplevel = tk.Toplevel(self.parent)
         eliminarReceta(toplevel, self.ruta)
+
+    def modificar_receta(self):
+        """Funcion para modificar una receta deseada por el usuario del archivo JSON"""
+        toplevel = tk.Toplevel(self.parent)
+        modificarReceta(toplevel, self.ruta)
+
+    def mostrar_recetas(self):
+        print('Aqui van todas las recetas')
+
 
 #funcionamiento
 root = tk.Tk()

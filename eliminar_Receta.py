@@ -1,7 +1,7 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
-# import ttkbootstrap as ttk
-# from ttkbootstrap.constants import *
+from tkinter import messagebox
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 import json
 
 
@@ -19,7 +19,7 @@ class Principal(ttk.Frame):
         ttk.Label(self.parent, text="Ingrese el nombre de la receta a eliminar: ").grid(row=1, column=0,padx= 10, pady=20)
         ttk.Entry(self.parent, textvariable=self.recetaAEliminar ).grid(row=1, column=2, padx=10, pady=20)
         
-        ttk.Button(self.parent, text="Eliminar", command=self._eliminar).grid(row=2, column=1, columnspan=2)
+        ttk.Button(self.parent, text="Eliminar", bootstyle="info", command=self._eliminar).grid(row=2, column=1, columnspan=2)
 
     def _read(self):
         """Lee el archivo JSON"""

@@ -1,5 +1,7 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import messagebox
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 import json
 from datetime import datetime 
 
@@ -44,7 +46,7 @@ class App(ttk.Frame):
         ttk.Label(self.parent, text="Favorita (si o no): ", padding=3).grid(row=8, column=1)
         ttk.Checkbutton(self.parent,variable=self.fav).grid(row=8,column=2)
 
-        btn_guardar = ttk.Button(self.parent, text="Guardar", padding=3, command=self._write)
+        btn_guardar = ttk.Button(self.parent, text="Guardar", padding=3, bootstyle="info", command=self._write)
         btn_guardar.grid(row=9, column=2)
         texto = '''
 Los campos con * son obligatorios
