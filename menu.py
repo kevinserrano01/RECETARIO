@@ -9,6 +9,7 @@ from visualizar_RecetaDelDia import VentanaPrincipal as recetaDelDia
 from crear_Receta import App as crearReceta
 from eliminar_Receta import Principal as eliminarReceta
 from modificar_Receta import Principal as modificarReceta
+from mostrar_Recetas import VentanaPrincipal as mostrarRecetas
 
 
 class VentanaPrincipal(ttk.Frame):
@@ -69,7 +70,9 @@ class VentanaPrincipal(ttk.Frame):
 
     def mostrar_recetas(self):
         """Funcion para mostrar todas las recetas"""
-        print('Recetas: ')
+        recetas = self._read()
+        toplevel = tk.Toplevel(self.parent)
+        mostrarRecetas(toplevel, recetas)
 
 
 #funcionamiento
