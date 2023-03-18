@@ -11,8 +11,8 @@ class Principal(ttk.Frame):
         super().__init__(parent)
         self.parent = parent  # Ventana principal
         self.ruta = ruta
-        self.RecetaAModificar = tk.StringVar()
-        self.campoAModificar = tk.StringVar()
+
+        self.recetaAModificar = tk.StringVar()
         parent.title("Modificar Receta")
         parent.resizable(False, False)
         ttk.Label(self.parent, text="¿Qué receta deseas modificar?").grid()
@@ -23,7 +23,7 @@ class Principal(ttk.Frame):
         for receta in data:
             listaNombresReceta.append(receta['nombre'])
         
-        self.combo = ttk.Combobox(self.parent, textvariable=self.campoAModificar, values=listaNombresReceta)
+        self.combo = ttk.Combobox(self.parent, textvariable=self.recetaAModificar, values=listaNombresReceta, state="readonly")
         self.combo.grid(row=1, column=2, padx=10, pady=20)
         self.combo.current(0)
         
@@ -37,21 +37,12 @@ class Principal(ttk.Frame):
     def _modificar(self):
         """funcion para modificar una receta en un archivo json
         Se leerá, y se modificara esa receta de la lista obtenida al leer"""
-        data = self._read() #data del archivo.
 
-        # ================================================================================================================
-        # Aqui se deberia Abrir otra ventana y modificar la receta dato por dato =========================================
-        # ================================================================================================================
-        if self.campoAModificar.get() != 'Seleccionar opción':
-            
-           
-                #llamada a nueva clase para nueva ventana. 
-                toplevel = tk.Toplevel(self.parent)
-                Secundaria(toplevel, self.ruta, self.campoAModificar.get()).grid()
-                
-                
-                # self.parent.destroy()
-            
+        if self.recetaAModificar.get() != 'Seleccionar opción':
+            #llamada a nueva clase para nueva ventana. 
+            toplevel = tk.Toplevel(self.parent)
+            Secundaria(toplevel, self.ruta, self.recetaAModificar.get()).grid()
+            # self.parent.destroy()
         else:
             messagebox.showerror(message=f"Debe seleccionar una opcion correcta :)")
             
