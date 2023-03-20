@@ -1,4 +1,3 @@
-# from tkinter import ttk
 import tkinter as tk
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
@@ -9,8 +8,8 @@ from visualizar_RecetaDelDia import VentanaPrincipal as recetaDelDia
 from crear_Receta import App as crearReceta
 from eliminar_Receta import Principal as eliminarReceta
 from modificar_Receta import Principal as modificarReceta
-from mostrar_Recetas import VentanaPrincipal as mostrarRecetas
-
+from filtro_Recetas import Principal as filtrarReceta
+# from mostrar_Recetas import VentanaPrincipal as mostrarRecetas
 
 class VentanaPrincipal(ttk.Frame):
     """Clase que simula una ventana principal de la aplicacion"""
@@ -72,7 +71,7 @@ class VentanaPrincipal(ttk.Frame):
         """Funcion para mostrar todas las recetas"""
         recetas = self._read()
         toplevel = tk.Toplevel(self.parent)
-        mostrarRecetas(toplevel, recetas)
+        filtrarReceta(toplevel, self.ruta)
 
 
 #funcionamiento
