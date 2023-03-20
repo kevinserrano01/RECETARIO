@@ -15,20 +15,20 @@ class Principal(ttk.Frame):
         parent.resizable(False, False)
         parent.configure(bg='black')
         
-        ttk.Label(self.parent, text="Buscar recetas por: ", bootstyle="inverse-dark").grid(row=1, column=0,padx= 10, pady=20)
-        ttk.Label(self.parent, text="Filtrar recetas por: ", bootstyle="inverse-dark").grid(row=2, column=0,padx= 10, pady=20)
+        ttk.Label(self.parent, text="Buscar recetas por: ", bootstyle="inverse-dark").grid(row=1, column=0,padx= 10, pady=15)
+        ttk.Label(self.parent, text="Filtrar recetas por: ", bootstyle="inverse-dark").grid(row=2, column=0,padx= 10, pady=15)
         
         self.filtro = tk.StringVar()
         opciones =['Seleccione una opcion', 'Nombre de receta', 'Etiquetas de receta']
         
         self.combo = ttk.Combobox(self.parent, textvariable=self.filtro, values=opciones, state="readonly")
-        self.combo.grid(row=1, column=2, padx=10, pady=20)
+        self.combo.grid(row=1, column=2, padx=10, pady=15)
         self.combo.current(0)
         
         self.busqueda = tk.StringVar()
-        ttk.Entry(self.parent, textvariable=self.busqueda, bootstyle="primary").grid(row=2, column=2, padx=5, pady=20)
+        ttk.Entry(self.parent, textvariable=self.busqueda, bootstyle="primary").grid(row=2, column=2, padx=5, pady=15)
         
-        ttk.Button(self.parent, text="FILTRAR", bootstyle="info", command=self.filtrar).grid(row=3, column=1, columnspan=2)
+        ttk.Button(self.parent, text="FILTRAR", bootstyle="info", command=self.filtrar).grid(row=3, column=1, columnspan=2, pady=10)
 
     def _read(self):
         """Lee el archivo JSON"""

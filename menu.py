@@ -22,12 +22,19 @@ class VentanaPrincipal(ttk.Frame):
         self.ruta = "recetas.json"
 
         # Poner icono en la ventana principal
-        # self.icon = tk.PhotoImage(file=icon)
-        # self.set_icon()
+        #FORMA 2
+        # self.icon = tk.PhotoImage(file='icon-Recetario.jpg')
+        # # self.set_icon()
         # self.parent.iconphoto(True, self.icon)
-        
+    
+        # def set_icon(self):
+        #     self.parent.iconphoto(True, self.icon)
+    
+        #FORMA 1
+        # parent.tk.call('wm', 'iconphoto', parent._w, tk.PhotoImage(file='./icon/icon-recetario.ico'))
+
         # MENU
-        ttk.Button(self.parent, text="Mostrar recetas", bootstyle="info-outline", command=self.mostrar_recetas).grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
+        ttk.Button(self.parent, text="Filtrar recetas", bootstyle="info-outline", command=self.mostrar_recetas).grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
         ttk.Button(self.parent, text="Mostrar receta del dia", bootstyle="info-outline", command=self.recetaDia).grid(row=1, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
         ttk.Button(self.parent, text="Agregar Receta", bootstyle="info-outline", command=self.crear_receta).grid(row=2, column=2, columnspan=2, padx=10, pady=10, ipadx=15)
         ttk.Button(self.parent, text="Modificar Receta", bootstyle="info-outline", command=self.modificar_receta).grid(row=3, column=2, columnspan=2, padx=10, pady=10, ipadx=10)
@@ -36,9 +43,6 @@ class VentanaPrincipal(ttk.Frame):
         separador.grid(row=10, column=2, ipadx=150)
         bottonExit = ttk.Button(self.parent, text="Cerrar", bootstyle="danger", command=parent.destroy)
         bottonExit.grid(row=11, column=2, ipadx=60, pady=20)
-    
-    # def set_icon(self):
-    #     self.parent.iconphoto(True, self.icon)
 
     def _read(self):
         """Lee el archivo JSON"""

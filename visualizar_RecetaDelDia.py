@@ -20,7 +20,7 @@ class VentanaPrincipal(ttk.Frame):
         label = ttk.Label(self.parent, text=title, justify='left', font='bold', bootstyle="inverse-dark")
         label.pack(pady=5)
         # imagen
-        self.canvas = Canvas(self.parent, width=300, height=300)
+        self.canvas = Canvas(self.parent, width=300, height=250)
         self.canvas.pack()
         if receta['imagen'] != "":
             imagen = Image.open(receta['imagen'])
@@ -83,10 +83,7 @@ class SecundariaIngredientes(ttk.Frame):
         self.parent = parent
         parent.configure(bg='black')
         parent.title("Ingredientes")
-        parent.geometry("350x100+180+100")
-        self.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
-        parent.columnconfigure(0, weight=1)
-        parent.rowconfigure(0, weight=1)
+        parent.geometry("200x200")
         parent.resizable(False, False)
         self.mostrar_Ingredientes(ingredientes)
         
@@ -94,7 +91,7 @@ class SecundariaIngredientes(ttk.Frame):
         """funcion que muestra los ingredientes en la ventana"""
         for ingrediente in ingredientes:
             texto =f"•  {ingrediente['nombre']}: {ingrediente['cantidad']} {ingrediente['unidad']}"
-            ttk.Label(self.parent, text = texto, bootstyle="inverse-dark").grid()
+            ttk.Label(self.parent, text = texto, bootstyle="inverse-dark", anchor=CENTER).grid(column=1, columnspan=2, pady=5)
 
 class SecundariaPasos(ttk.Frame):
     """ABRE UNA VENTANA SECUNDARIA PARA LA VISUALIZACION DE LOS PASOS DE UNA RECETA.

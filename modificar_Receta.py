@@ -27,7 +27,7 @@ class Principal(ttk.Frame):
         self.combo.grid(row=1, column=2, padx=10, pady=20)
         self.combo.current(0)
         
-        ttk.Button(self.parent, text="Modificar", bootstyle="warning", command=self._modificar).grid(row=3, column=1, columnspan=2)
+        ttk.Button(self.parent, text="Modificar", bootstyle="warning", command=self._modificar).grid(row=3, column=1, columnspan=2, pady=10)
 
     def _read(self):
         """Lee el archivo JSON"""

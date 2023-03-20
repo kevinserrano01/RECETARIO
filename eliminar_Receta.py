@@ -29,7 +29,7 @@ class Principal(ttk.Frame):
         
         # ttk.Entry(self.parent, textvariable=self.recetaAEliminar ).grid(row=1, column=2, padx=10, pady=20)
         
-        ttk.Button(self.parent, text="Eliminar", bootstyle="danger", command=self._eliminar).grid(row=2, column=1, columnspan=2)
+        ttk.Button(self.parent, text="Eliminar", bootstyle="danger", command=self._eliminar).grid(row=2, column=1, columnspan=2, pady=10)
 
     def _read(self):
         """Lee el archivo JSON"""

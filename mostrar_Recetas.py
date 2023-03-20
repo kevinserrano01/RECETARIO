@@ -8,7 +8,7 @@ import json
 from visualizar_RecetaDelDia import VentanaPrincipal as verReceta
 
 class VentanaPrincipal(ttk.Frame):
-    """Clase que muestra TODAS las recetas"""
+    """Clase que muestra TODAS las recetas en base a lo filtrado (nombre o etiqueta) y la busqueda (lo que ingresa el usuario)"""
 
     def __init__(self, parent, ruta, filtrado, busqueda):
         super().__init__()
@@ -23,7 +23,7 @@ class VentanaPrincipal(ttk.Frame):
         parent.configure(bg='black')
         self.recetas = self._read()
         
-        self.mostrar_recetasTodas()
+        self.mostrar_recetas()
         
 
     def _read(self):
@@ -31,7 +31,7 @@ class VentanaPrincipal(ttk.Frame):
         with open(self.ruta, 'r') as archivo:
             return json.load(archivo)
         
-    def mostrar_recetasTodas(self):
+    def mostrar_recetas(self):
         """funcion que muestra todos los nombres de las recetas"""
         i = 0 #variable de control para saber si se printio alguna receta
         for indice , receta in enumerate(self.recetas, 0):
