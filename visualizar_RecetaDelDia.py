@@ -8,11 +8,7 @@ import datetime
 import json
 
 class VentanaPrincipal(ttk.Frame):
-    """Clase que muestra una receta especifica (RECETA DEL DIA)
-
-    Args:
-        ttk (_type_): _description_
-    """
+    """Clase que muestra una receta especifica (RECETA DEL DIA)"""
     def __init__(self, parent, receta):
         super().__init__()
         self.parent = parent

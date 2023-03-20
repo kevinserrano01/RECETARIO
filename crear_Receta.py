@@ -11,6 +11,7 @@ class App(ttk.Frame):
         self.parent = parent # referencia a la ventana ppal
         parent.title("Crear receta")
         self.ruta= ruta
+        parent.configure(bg='black')
         # variables de datos a guardar
         self.nombre = tk.StringVar()
         self.ingredientes = tk.StringVar()
@@ -22,32 +23,32 @@ class App(ttk.Frame):
         self.fav = tk.BooleanVar()
         # labels y entryes para cada campo a agregar.
         
-        ttk.Label(self.parent, text="Nombre: *", padding=3).grid(row=1, column=1)
-        ttk.Entry(self.parent, textvariable=self.nombre).grid(row=1, column=2)
+        ttk.Label(self.parent, text="Nombre: *", padding=3, bootstyle="inverse-dark").grid(row=1, column=1, padx=10, pady=5)
+        ttk.Entry(self.parent, textvariable=self.nombre, bootstyle="primary").grid(row=1, column=2, padx=10, pady=5)
         
-        ttk.Label(self.parent, text="Ingredientes: *", padding=3).grid(row=2, column=1)
-        ttk.Entry(self.parent, textvariable=self.ingredientes).grid(row=2, column=2)
+        ttk.Label(self.parent, text="Ingredientes: *", padding=3, bootstyle="inverse-dark").grid(row=2, column=1, padx=10, pady=5)
+        ttk.Entry(self.parent, textvariable=self.ingredientes, bootstyle="primary").grid(row=2, column=2, padx=10, pady=5)
         
-        ttk.Label(self.parent, text="Pasos para la preparacion: *", padding=3).grid(row=3, column=1)
-        ttk.Entry(self.parent,textvariable=self.pasos).grid(row=3, column=2)
+        ttk.Label(self.parent, text="Pasos para la preparacion: *", padding=3, bootstyle="inverse-dark").grid(row=3, column=1, padx=10, pady=5)
+        ttk.Entry(self.parent,textvariable=self.pasos, bootstyle="primary").grid(row=3, column=2, padx=10, pady=5)
         
-        ttk.Label(self.parent, text="Imagen: ", padding=3).grid(row=4, column=1)
-        ttk.Entry(self.parent,textvariable=self.imagen).grid(row=4, column=2)
+        ttk.Label(self.parent, text="Imagen: ", padding=3, bootstyle="inverse-dark").grid(row=4, column=1, padx=10, pady=5)
+        ttk.Entry(self.parent,textvariable=self.imagen, bootstyle="primary").grid(row=4, column=2, padx=10, pady=5)
         
-        ttk.Label(self.parent, text="Tiempo preparacion (min): *", padding=3).grid(row=5, column=1)
-        ttk.Entry(self.parent,textvariable=self.preparacion).grid(row=5, column=2)
+        ttk.Label(self.parent, text="Tiempo preparacion (min): *", padding=3, bootstyle="inverse-dark").grid(row=5, column=1, padx=10, pady=5)
+        ttk.Entry(self.parent,textvariable=self.preparacion, bootstyle="primary").grid(row=5, column=2, padx=10, pady=5)
         
-        ttk.Label(self.parent, text="Tiempo de coccion: *", padding=3).grid(row=6, column=1)
-        ttk.Entry(self.parent,textvariable=self.coccion).grid(row=6, column=2)
+        ttk.Label(self.parent, text="Tiempo de coccion (min): *", padding=3, bootstyle="inverse-dark").grid(row=6, column=1, padx=10, pady=5)
+        ttk.Entry(self.parent,textvariable=self.coccion, bootstyle="primary").grid(row=6, column=2, padx=10, pady=5)
         
-        ttk.Label(self.parent, text="Etiquetas: *", padding=3).grid(row=7, column=1)
-        ttk.Entry(self.parent,textvariable=self.etiquetas).grid(row=7, column=2)
+        ttk.Label(self.parent, text="Etiquetas: *", padding=3, bootstyle="inverse-dark").grid(row=7, column=1, padx=10, pady=5)
+        ttk.Entry(self.parent,textvariable=self.etiquetas, bootstyle="primary").grid(row=7, column=2, padx=10, pady=5)
         
-        ttk.Label(self.parent, text="Favorita (si o no): ", padding=3).grid(row=8, column=1)
-        ttk.Checkbutton(self.parent,variable=self.fav).grid(row=8,column=2)
+        ttk.Label(self.parent, text="Favorita (si o no): ", padding=3, bootstyle="inverse-dark").grid(row=8, column=1, padx=10, pady=5)
+        ttk.Checkbutton(self.parent,variable=self.fav, bootstyle="success-round-toggle").grid(row=8,column=2, padx=10, pady=5)
 
         btn_guardar = ttk.Button(self.parent, text="Guardar", padding=3, bootstyle="info", command=self._write)
-        btn_guardar.grid(row=9, column=2)
+        btn_guardar.grid(row=9, column=2, padx=10, pady=5)
         texto = '''
 Los campos con * son obligatorios
 Los ingredientes se deben agregan con un formato como el siguiente ejemplo:
@@ -57,7 +58,7 @@ Los pasos se deben agregan separados por coma, como en este ejemplo:
 Las etiquetas deben estar separadas por coma y un espacio, así:
     Ejemplo: Facil, Rissoto, Arroz.
         '''
-        ttk.Label(self.parent, text=texto, padding=3).grid(row=10, columnspan=3, padx=10)
+        ttk.Label(self.parent, text=texto, padding=3, bootstyle="inverse-dark").grid(row=10, columnspan=3, padx=10, pady=10)
 
 
     def _read(self):
