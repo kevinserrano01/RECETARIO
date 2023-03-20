@@ -13,9 +13,10 @@ class Principal(ttk.Frame):
         self.ruta = ruta
         parent.title("FILTRAR RECETAS")
         parent.resizable(False, False)
+        parent.configure(bg='black')
         
-        ttk.Label(self.parent, text="Buscar recetas por: ").grid(row=1, column=0,padx= 10, pady=20)
-        ttk.Label(self.parent, text="Filtrar recetas por: ").grid(row=2, column=0,padx= 10, pady=20)
+        ttk.Label(self.parent, text="Buscar recetas por: ", bootstyle="inverse-dark").grid(row=1, column=0,padx= 10, pady=20)
+        ttk.Label(self.parent, text="Filtrar recetas por: ", bootstyle="inverse-dark").grid(row=2, column=0,padx= 10, pady=20)
         
         self.filtro = tk.StringVar()
         opciones =['Seleccione una opcion', 'Nombre de receta', 'Etiquetas de receta']
@@ -25,7 +26,7 @@ class Principal(ttk.Frame):
         self.combo.current(0)
         
         self.busqueda = tk.StringVar()
-        ttk.Entry(self.parent, textvariable=self.busqueda).grid(row=2, column=2, padx=5, pady=20)
+        ttk.Entry(self.parent, textvariable=self.busqueda, bootstyle="primary").grid(row=2, column=2, padx=5, pady=20)
         
         ttk.Button(self.parent, text="FILTRAR", bootstyle="info", command=self.filtrar).grid(row=3, column=1, columnspan=2)
 

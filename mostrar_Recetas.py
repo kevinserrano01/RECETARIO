@@ -13,6 +13,7 @@ class VentanaPrincipal(ttk.Frame):
     def __init__(self, parent, ruta, filtrado, busqueda):
         super().__init__()
         self.parent = parent
+        parent.configure(bg='black')
         self.ruta = ruta
         self.filtrado = filtrado
         self.busqueda = busqueda
@@ -39,7 +40,7 @@ class VentanaPrincipal(ttk.Frame):
                     
                     texto =f"Receta: {receta['nombre']}"
                     ttk.Label(self.parent, text = texto, bootstyle="inverse-secondary").grid(row=indice, column = 0, padx=10, pady=15)
-                    ttk.Button(self.parent, bootstyle="success", text='ver receta', command=lambda: self.mostrarReceta(receta)).grid(row=indice,column=1, padx=10, pady=5)
+                    ttk.Button(self.parent, bootstyle="success", text='ver receta', command=lambda: self.mostrarReceta(receta)).grid(row=indice,column=1, padx=10, pady=3)
                     i+=1
             else:
                 #si entra aca, es porque el filtrado es = Etiquetas de receta

@@ -9,6 +9,7 @@ class App(ttk.Frame):
     def __init__(self, parent, ruta, nombre):
         super().__init__(parent, padding=(10))
         self.parent = parent # referencia a la ventana ppal
+        parent.configure(bg='black')
         parent.title("MODIFICAR RECETA")
         # parent.resizable(False, False)
         self.ruta= ruta
@@ -52,14 +53,14 @@ class App(ttk.Frame):
         for etiqueta in self.receta['etiquetas']:
             self.listaEtiquetas.append(etiqueta)
 
-        ttk.Label(self.parent, text="Modifique cada campo con la data que quiera.", padding=3).grid(row=0, column=1, columnspan=2)
+        ttk.Label(self.parent, text="Modifique cada campo con la data que quiera.",bootstyle="inverse-dark", padding=3).grid(row=0, column=1, columnspan=2)
         
         # nombre
-        ttk.Label(self.parent, text="Nombre: ", padding=3).grid(row=1, column=1)
-        ttk.Entry(self.parent, textvariable=self.nombre).grid(row=1, column=2)
+        ttk.Label(self.parent, text="Nombre: ", bootstyle="inverse-dark", padding=3).grid(row=1, column=1)
+        ttk.Entry(self.parent, textvariable=self.nombre, bootstyle="primary").grid(row=1, column=2)
         
         # ingredientes
-        ttk.Label(self.parent, text="Ingredientes: ", padding=3).grid(row=2, column=1)
+        ttk.Label(self.parent, text="Ingredientes: ", bootstyle="inverse-dark", padding=3).grid(row=2, column=1)
         # ttk.Entry(self.parent, textvariable=self.ingredientes).grid(row=2, column=2)
         self.comboIngredientes = ttk.Combobox(self.parent, textvariable=self.ingredientes, values=self.listaIngredientes, state="readonly")
         #, state="readonly"
@@ -67,11 +68,11 @@ class App(ttk.Frame):
         self.comboIngredientes.current(0)
         
         self.ingredienteNuevo = tk.StringVar()
-        ttk.Label(self.parent, text="->",padding=3).grid(row=2, column=3)
-        ttk.Entry(self.parent, textvariable=self.ingredienteNuevo).grid(row=2, column=4, padx=5)
+        ttk.Label(self.parent, text="->", bootstyle="inverse-dark",padding=3).grid(row=2, column=3)
+        ttk.Entry(self.parent, textvariable=self.ingredienteNuevo, bootstyle="primary").grid(row=2, column=4, padx=5)
         
         # pasos de preparacion
-        ttk.Label(self.parent, text="Seleccionar un paso y modificarlo: ", padding=3).grid(row=3, column=1)
+        ttk.Label(self.parent, text="Seleccionar un paso y modificarlo: ", bootstyle="inverse-dark", padding=3).grid(row=3, column=1)
         # ttk.Entry(self.parent,textvariable=self.pasos).grid(row=3, column=2)
         self.comboPasos = ttk.Combobox(self.parent, textvariable=self.pasos, values=self.listaPasos, state="readonly")
         #, state="readonly"
@@ -79,35 +80,35 @@ class App(ttk.Frame):
         self.comboPasos.current(0)
         
         self.pasoNuevo = tk.StringVar()
-        ttk.Label(self.parent, text="->", padding=3).grid(row=3, column=3)
-        ttk.Entry(self.parent, textvariable=self.pasoNuevo).grid(row=3, column=4, padx=5)
+        ttk.Label(self.parent, text="->", bootstyle="inverse-dark", padding=3).grid(row=3, column=3)
+        ttk.Entry(self.parent, textvariable=self.pasoNuevo, bootstyle="primary").grid(row=3, column=4, padx=5)
         
         # tiempo preparacion
-        ttk.Label(self.parent, text="Tiempo preparacion (min): ", padding=3).grid(row=5, column=1)
-        ttk.Entry(self.parent,textvariable=self.preparacion).grid(row=5, column=2)
+        ttk.Label(self.parent, text="Tiempo preparacion (min): ", bootstyle="inverse-dark", padding=3).grid(row=5, column=1)
+        ttk.Entry(self.parent,textvariable=self.preparacion, bootstyle="primary").grid(row=5, column=2)
         
         # tiempo de coccion
-        ttk.Label(self.parent, text="Tiempo de coccion: ", padding=3).grid(row=6, column=1)
-        ttk.Entry(self.parent,textvariable=self.coccion).grid(row=6, column=2)
+        ttk.Label(self.parent, text="Tiempo de coccion: ", bootstyle="inverse-dark", padding=3).grid(row=6, column=1)
+        ttk.Entry(self.parent,textvariable=self.coccion, bootstyle="primary").grid(row=6, column=2)
         
         # etiquetas
-        ttk.Label(self.parent, text="Etiquetas: ", padding=3).grid(row=7, column=1)
+        ttk.Label(self.parent, text="Etiquetas: ", bootstyle="inverse-dark", padding=3).grid(row=7, column=1)
         self.comboEtiquetas = ttk.Combobox(self.parent, textvariable=self.etiquetas, values=self.listaEtiquetas, state="readonly")
         #, state="readonly"
         self.comboEtiquetas.grid(row=7,column=2, ipadx=20)
         self.comboEtiquetas.current(0)
         
         self.etiquetaNueva = tk.StringVar()
-        ttk.Label(self.parent, text="->", ).grid(row=7, column=3, padx=5)
-        ttk.Entry(self.parent, textvariable=self.etiquetaNueva).grid(row=7, column=4)
+        ttk.Label(self.parent, text="->", bootstyle="inverse-dark", ).grid(row=7, column=3, padx=5)
+        ttk.Entry(self.parent, textvariable=self.etiquetaNueva, bootstyle="primary").grid(row=7, column=4)
         
         # es favorita
-        ttk.Label(self.parent, text="Favorita (si o no): ", padding=3).grid(row=8, column=1)
+        ttk.Label(self.parent, text="Favorita (si o no): ", bootstyle="inverse-dark", padding=3).grid(row=8, column=1)
         checkbutton = ttk.Checkbutton(self.parent,variable=self.fav)
         checkbutton.grid(row=8,column=2)
         
 
-        btn_guardar = ttk.Button(self.parent, text="Guardar", padding=3, bootstyle="info", command=self._rewrite)
+        btn_guardar = ttk.Button(self.parent, text="Guardar", padding=8, bootstyle="success", command=self._rewrite)
         btn_guardar.grid(row=9, column=2)
         texto = '''
 DEJAR EN BLANCO LOS CAMPOS QUE NO SE QUIERAN MODIFICAR.
@@ -119,7 +120,7 @@ Los pasos se deben agregan separados por coma, como en este ejemplo:
 Las etiquetas deben estar separadas por coma y un espacio, así:
     Ejemplo: Facil, Rissoto, Arroz.
         '''
-        ttk.Label(self.parent, text=texto, padding=3).grid(row=10, columnspan=3, padx=10)
+        ttk.Label(self.parent, text=texto, bootstyle="inverse-dark", padding=3).grid(row=10, columnspan=3, padx=10)
 
         # BINDS PARA LOS COMBOBOX
         # self.comboIngredientes.bind("<<ComboboxSelected>>", self.mostrarIngrediente)

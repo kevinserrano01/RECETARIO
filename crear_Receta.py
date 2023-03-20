@@ -47,8 +47,8 @@ class App(ttk.Frame):
         ttk.Label(self.parent, text="Favorita (si o no): ", padding=3, bootstyle="inverse-dark").grid(row=8, column=1, padx=10, pady=5)
         ttk.Checkbutton(self.parent,variable=self.fav, bootstyle="success-round-toggle").grid(row=8,column=2, padx=10, pady=5)
 
-        btn_guardar = ttk.Button(self.parent, text="Guardar", padding=3, bootstyle="info", command=self._write)
-        btn_guardar.grid(row=9, column=2, padx=10, pady=5)
+        btn_guardar = ttk.Button(self.parent, bootstyle="success", text="Guardar", padding=8, command=self._write)
+        btn_guardar.grid(row=9, column=2, padx=5, pady=5)
         texto = '''
 Los campos con * son obligatorios
 Los ingredientes se deben agregan con un formato como el siguiente ejemplo:

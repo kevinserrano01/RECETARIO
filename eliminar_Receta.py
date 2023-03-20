@@ -10,6 +10,7 @@ class Principal(ttk.Frame):
     def __init__(self, parent, ruta):
         super().__init__(parent)
         self.parent = parent  # Ventana principal
+        parent.configure(bg='black')
         self.ruta = ruta
         self.recetaAEliminar  = tk.StringVar()
         parent.title("Eliminar Receta")
@@ -18,9 +19,9 @@ class Principal(ttk.Frame):
         #BUSCAR LOS NOMBRES DE LAS RECETAS Y GUARDARLOS EN UNA LISTA
         listaRecetas = self.obtenerLista()
         
-        ttk.Label(self.parent, text="¿Qué receta deseas eliminar?").grid()
+        ttk.Label(self.parent, text="¿Qué receta deseas eliminar?", bootstyle="inverse-dark").grid()
                 
-        ttk.Label(self.parent, text="Ingrese el nombre de la receta a eliminar: ").grid(row=1, column=0,padx= 10, pady=20)
+        ttk.Label(self.parent, text="Ingrese el nombre de la receta a eliminar: ", bootstyle="inverse-dark").grid(row=1, column=0,padx= 10, pady=20)
         self.combo = ttk.Combobox(self.parent, textvariable=self.recetaAEliminar, values=listaRecetas, state="readonly")
         self.combo.grid(row=1, column=2, padx=10, pady=20)
         self.combo.current(0)
@@ -28,7 +29,7 @@ class Principal(ttk.Frame):
         
         # ttk.Entry(self.parent, textvariable=self.recetaAEliminar ).grid(row=1, column=2, padx=10, pady=20)
         
-        ttk.Button(self.parent, text="Eliminar", bootstyle="info", command=self._eliminar).grid(row=2, column=1, columnspan=2)
+        ttk.Button(self.parent, text="Eliminar", bootstyle="danger", command=self._eliminar).grid(row=2, column=1, columnspan=2)
 
     def _read(self):
         """Lee el archivo JSON"""

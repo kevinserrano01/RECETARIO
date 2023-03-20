@@ -14,10 +14,11 @@ class VentanaPrincipal(ttk.Frame):
         self.parent = parent
         parent.title('RECETA DEL DIA')
         parent.geometry('400x500')
+        parent.configure(bg='black')
         nombre = receta['nombre']
         title = f'{nombre} '
-        label = tk.Label(self.parent, text=title, justify='left', font='bold')
-        label.pack()
+        label = ttk.Label(self.parent, text=title, justify='left', font='bold', bootstyle="inverse-dark")
+        label.pack(pady=5)
         # imagen
         self.canvas = Canvas(self.parent, width=300, height=300)
         self.canvas.pack()
@@ -28,7 +29,7 @@ class VentanaPrincipal(ttk.Frame):
             self.canvas.create_image(0, 0, anchor=NW, image=self.imagen_tk)
         else:
             #no contiene una imagen guardada
-            tk.Label(self.parent, text="No hay imagen para esta receta.").pack()
+            ttk.Label(self.parent, text="No hay imagen para esta receta.", bootstyle="inverse-dark").pack()
         # buttons que abren otra ventana
         self.ingredientes = receta['ingredientes']
         btnIngreditnes = ttk.Button(self.parent, text="Ingredientes", bootstyle="info-outline", command=self.abrir_ventanaIng)
@@ -38,21 +39,21 @@ class VentanaPrincipal(ttk.Frame):
         btnPreparacion.pack(pady=5)
         # tiempo de coccion
         time_coccion = receta['tiempo_coccion']
-        label = tk.Label(self.parent, text=f"Tiempo de coccion: {time_coccion}", justify='left')
+        label = ttk.Label(self.parent, text=f"Tiempo de coccion: {time_coccion}", justify='left', bootstyle="inverse-dark")
         label.pack()
         # fecha de creacion
         fecha = receta['fecha_creacion']
         fecha_creacion = f'Fecha de creacion: {fecha}'
-        label = tk.Label(self.parent, text=fecha_creacion, justify='left')
+        label = ttk.Label(self.parent, text=fecha_creacion, justify='left', bootstyle="inverse-dark")
         label.pack()
         # tiempo de preparacion
         preparacion = receta['tiempo_preparacion']
         time_coccion = f'Tiempo de preparacion: {preparacion}'
-        label = tk.Label(self.parent, text=time_coccion, justify='left')
+        label = ttk.Label(self.parent, text=time_coccion, justify='left', bootstyle="inverse-dark")
         label.pack()
         # es favorita
         favorita = receta['favorita']
-        label = tk.Label(self.parent, text=f"Es favorita: {'Sí' if favorita else 'No'}", justify='left')
+        label = ttk.Label(self.parent, text=f"Es favorita: {'Sí' if favorita else 'No'}", justify='left', bootstyle="inverse-dark")
         label.pack()
         
     def abrir_ventanaIng(self):
@@ -80,6 +81,7 @@ class SecundariaIngredientes(ttk.Frame):
     def __init__(self, parent, ingredientes):
         super().__init__(parent, padding=(20))
         self.parent = parent
+        parent.configure(bg='black')
         parent.title("Ingredientes")
         parent.geometry("350x100+180+100")
         self.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
@@ -91,8 +93,8 @@ class SecundariaIngredientes(ttk.Frame):
     def mostrar_Ingredientes(self, ingredientes):
         """funcion que muestra los ingredientes en la ventana"""
         for ingrediente in ingredientes:
-            texto =f"{ingrediente['nombre']}: {ingrediente['cantidad']} {ingrediente['unidad']}"
-            tk.Label(self.parent, text = texto).grid()
+            texto =f"•  {ingrediente['nombre']}: {ingrediente['cantidad']} {ingrediente['unidad']}"
+            ttk.Label(self.parent, text = texto, bootstyle="inverse-dark").grid()
 
 class SecundariaPasos(ttk.Frame):
     """ABRE UNA VENTANA SECUNDARIA PARA LA VISUALIZACION DE LOS PASOS DE UNA RECETA.
@@ -105,6 +107,7 @@ class SecundariaPasos(ttk.Frame):
         self.parent = parent
         parent.title("Pasos de Preparacion")
         parent.geometry("+180+100")
+        parent.configure(bg='black')
         self.grid(sticky=(tk.N, tk.S, tk.E, tk.W))
         parent.columnconfigure(0, weight=1)
         parent.rowconfigure(0, weight=1)

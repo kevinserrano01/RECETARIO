@@ -10,14 +10,14 @@ class Principal(ttk.Frame):
     def __init__(self, parent, ruta):
         super().__init__(parent)
         self.parent = parent  # Ventana principal
+        parent.configure(bg='black')
         self.ruta = ruta
-
         self.recetaAModificar = tk.StringVar()
         parent.title("Modificar Receta")
         parent.resizable(False, False)
-        ttk.Label(self.parent, text="¿Qué receta deseas modificar?").grid()
+        ttk.Label(self.parent, text="¿Qué receta deseas modificar?", bootstyle="inverse-dark").grid()
         
-        ttk.Label(self.parent, text="Ingrese el nombre de la receta a modificar: ").grid(row=1, column=0,padx= 10, pady=20)
+        ttk.Label(self.parent, text="Ingrese el nombre de la receta a modificar: ", bootstyle="inverse-dark").grid(row=1, column=0,padx= 10, pady=20)
         listaNombresReceta = ['Seleccionar opción']
         data = self._read()
         for receta in data:
@@ -27,7 +27,7 @@ class Principal(ttk.Frame):
         self.combo.grid(row=1, column=2, padx=10, pady=20)
         self.combo.current(0)
         
-        ttk.Button(self.parent, text="Modificar", bootstyle="info", command=self._modificar).grid(row=3, column=1, columnspan=2)
+        ttk.Button(self.parent, text="Modificar", bootstyle="warning", command=self._modificar).grid(row=3, column=1, columnspan=2)
 
     def _read(self):
         """Lee el archivo JSON"""
