@@ -13,6 +13,7 @@ class VentanaPrincipal(ttk.Frame):
     def __init__(self, parent, ruta, filtrado, busqueda):
         super().__init__()
         self.parent = parent
+        parent.geometry("150x250")
         parent.configure(bg='black')
         self.ruta = ruta
         self.filtrado = filtrado
@@ -22,9 +23,14 @@ class VentanaPrincipal(ttk.Frame):
 
         parent.configure(bg='black')
         self.recetas = self._read()
-        self.mostrar_recetas()
         
-
+        self.resultados = self.filtrarRecetas()
+        nombres = tk.Variable(value = [receta['nombre'] for receta in self.resultados])
+        
+        self.listbox = tk.Listbox(self.parent, listvariable=nombres, selectmode=tk.SINGLE, height=len(self.resultados))
+        self.listbox.grid(row=0, column=1,columnspan=3, padx=10, pady=10)
+        ttk.Button(self.parent, text="Mostrar receta", bootstyle="info-outline",command=self.mostrarRecetaIndividual).grid(row=2, column=1, padx=10, pady=10, columnspan=3)
+        
     def _read(self):
         """Lee el archivo JSON"""
         with open(self.ruta, 'r') as archivo:
@@ -47,29 +53,15 @@ class VentanaPrincipal(ttk.Frame):
                         break 
                     
         return listaResultados
-        
-    def mostrar_recetas(self):
-        """funcion que muestra todos los nombres de las recetas"""
-        resultados = self.filtrarRecetas()
-        
-        # print([element['nombre'] for element in resultados])
-        
-        if len(resultados) == 0:
-            messagebox.showinfo(title="RESULTADO DE BUSQUEDA DE RECETAS", message="No se encontraron recetas con la informacion deseada.")
-            self.parent.destroy()
-        else:
-            for indice, receta in enumerate(resultados):
-                # PREGUNTAR ACA AL PROFE
-                ttk.Label(self.parent, text = f"Receta: {receta['nombre']}", bootstyle="inverse-secondary").grid(row=indice,column=0, padx=10, pady=15)
-                ttk.Button(self.parent, bootstyle="success", text='ver receta', command=lambda: self.mostrarRecetaIndividual(receta)).grid(row=indice,column=1, padx=10, pady=5)
-                       
-            
-    def mostrarRecetaIndividual(self, receta):
+      
+    def mostrarRecetaIndividual(self):
         """Funcion que muestra una receta deseada por el usuario"""
-        
-        resultados = self.filtrarRecetas()
-        index = resultados.index(receta)
-        print(index)
-        
-        toplevel = tk.Toplevel(self.parent)
-        verReceta(toplevel, resultados[index])
+        seleccion = self.listbox.curselection()
+        if seleccion:
+            nombreReceta = self.listbox.get(seleccion)
+            for receta in self.resultados:
+                if receta['nombre'].lower() == nombreReceta.lower():
+                    toplevel = tk.Toplevel(self.parent)
+                    verReceta(toplevel, receta)
+        else:
+            messagebox.showinfo(message=f"Debe seleccionar un item de la lista.")
