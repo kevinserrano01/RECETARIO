@@ -22,7 +22,6 @@ class VentanaPrincipal(ttk.Frame):
 
         parent.configure(bg='black')
         self.recetas = self._read()
-        
         self.mostrar_recetas()
         
 
@@ -31,34 +30,46 @@ class VentanaPrincipal(ttk.Frame):
         with open(self.ruta, 'r') as archivo:
             return json.load(archivo)
         
-    def mostrar_recetas(self):
-        """funcion que muestra todos los nombres de las recetas"""
-        i = 0 #variable de control para saber si se printio alguna receta
-        for indice , receta in enumerate(self.recetas, 0):
+    def filtrarRecetas(self):
+        """funcion que filtra recetas por nombre y etiqueta que devuelve una lista con sus resultados."""
+        listaResultados = []
+        
+        for receta in self.recetas:
+                #si entra aca, es porque el filtrado es = Nombre de receta
             if  self.filtrado == 'Nombre de receta':
                 if self.busqueda.lower() in receta['nombre'].lower():
-                    
-                    texto =f"Receta: {receta['nombre']}"
-                    ttk.Label(self.parent, text = texto, bootstyle="inverse-secondary").grid(row=indice, column = 0, padx=10, pady=15)
-                    ttk.Button(self.parent, bootstyle="success", text='ver receta', command=lambda: self.mostrarReceta(receta)).grid(row=indice,column=1, padx=10, pady=3)
-                    i+=1
+                    listaResultados.append(receta)
             else:
                 #si entra aca, es porque el filtrado es = Etiquetas de receta
-                receta['etiquetas'] 
                 for etiqueta in receta['etiquetas']:
-                        
-                    if self.busqueda.lower() in etiqueta.lower():
-                        
-                        texto =f"Receta: {receta['nombre']}"
-                        ttk.Label(self.parent, text = texto, bootstyle="inverse-secondary").grid(row=indice,column=0, padx=10, pady=15)
-                        ttk.Button(self.parent, bootstyle="success", text='ver receta', command=lambda: self.mostrarReceta(receta)).grid(row=indice,column=1, padx=10, pady=5)
-                        i+=1
-                        #cerramos el ciclo interno de etiquetas, si es que al menos una etiqueta tiene lo buscado en self.busqueda
+                    if self.busqueda.lower() in etiqueta.lower(): 
+                        listaResultados.append(receta)
                         break 
-        if i== 0:
-            messagebox.showinfo(title="RESULTADO DE BUSQUEDA DE RECETAS", message="No se encontraron recetas con la informacion proporcionada.")
+                    
+        return listaResultados
+        
+    def mostrar_recetas(self):
+        """funcion que muestra todos los nombres de las recetas"""
+        resultados = self.filtrarRecetas()
+        
+        # print([element['nombre'] for element in resultados])
+        
+        if len(resultados) == 0:
+            messagebox.showinfo(title="RESULTADO DE BUSQUEDA DE RECETAS", message="No se encontraron recetas con la informacion deseada.")
             self.parent.destroy()
+        else:
+            for indice, receta in enumerate(resultados):
+                # PREGUNTAR ACA AL PROFE
+                ttk.Label(self.parent, text = f"Receta: {receta['nombre']}", bootstyle="inverse-secondary").grid(row=indice,column=0, padx=10, pady=15)
+                ttk.Button(self.parent, bootstyle="success", text='ver receta', command=lambda: self.mostrarRecetaIndividual(receta)).grid(row=indice,column=1, padx=10, pady=5)
+                       
             
-    def mostrarReceta(self, receta):
+    def mostrarRecetaIndividual(self, receta):
+        """Funcion que muestra una receta deseada por el usuario"""
+        
+        resultados = self.filtrarRecetas()
+        index = resultados.index(receta)
+        print(index)
+        
         toplevel = tk.Toplevel(self.parent)
-        verReceta(toplevel, receta)
+        verReceta(toplevel, resultados[index])

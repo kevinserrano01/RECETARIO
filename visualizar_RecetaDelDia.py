@@ -73,11 +73,7 @@ class VentanaPrincipal(ttk.Frame):
             messagebox.showwarning(message="No tiene pasos, no se puede preparar :c")
         
 class SecundariaIngredientes(ttk.Frame):
-    """ABRE UNA VENTANA SECUNDARIA PARA LA VISUALIZACION DE INGREDIENTES DE UNA RECETA.
-
-    Args:
-        ttk (_type_): _description_
-    """
+    """ABRE UNA VENTANA SECUNDARIA PARA LA VISUALIZACION DE INGREDIENTES DE UNA RECETA."""
     def __init__(self, parent, ingredientes):
         super().__init__(parent, padding=(20))
         self.parent = parent
@@ -94,11 +90,7 @@ class SecundariaIngredientes(ttk.Frame):
             ttk.Label(self.parent, text = texto, bootstyle="inverse-dark", anchor=CENTER).grid(column=1, columnspan=2, pady=5)
 
 class SecundariaPasos(ttk.Frame):
-    """ABRE UNA VENTANA SECUNDARIA PARA LA VISUALIZACION DE LOS PASOS DE UNA RECETA.
-
-    Args:
-        ttk (_type_): _description_
-    """
+    """ABRE UNA VENTANA SECUNDARIA PARA LA VISUALIZACION DE LOS PASOS DE UNA RECETA."""
     def __init__(self, parent, pasos):
         super().__init__(parent, padding=(20))
         self.parent = parent

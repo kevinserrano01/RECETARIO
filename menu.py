@@ -9,7 +9,6 @@ from crear_Receta import App as crearReceta
 from eliminar_Receta import Principal as eliminarReceta
 from modificar_Receta import Principal as modificarReceta
 from filtro_Recetas import Principal as filtrarReceta
-# from mostrar_Recetas import VentanaPrincipal as mostrarRecetas
 
 class VentanaPrincipal(ttk.Frame):
     """Clase que simula una ventana principal de la aplicacion"""
@@ -20,18 +19,6 @@ class VentanaPrincipal(ttk.Frame):
         parent.resizable(False, False)
         parent.configure(bg='black')
         self.ruta = "recetas.json"
-
-        # Poner icono en la ventana principal
-        #FORMA 2
-        # self.icon = tk.PhotoImage(file='icon-Recetario.jpg')
-        # # self.set_icon()
-        # self.parent.iconphoto(True, self.icon)
-    
-        # def set_icon(self):
-        #     self.parent.iconphoto(True, self.icon)
-    
-        #FORMA 1
-        # parent.tk.call('wm', 'iconphoto', parent._w, tk.PhotoImage(file='./icon/icon-recetario.ico'))
 
         # MENU
         ttk.Button(self.parent, text="Filtrar recetas", bootstyle="info-outline", command=self.mostrar_recetas).grid(row=0, column=2, columnspan=2, padx=10, pady=10, ipadx=14)
@@ -72,8 +59,7 @@ class VentanaPrincipal(ttk.Frame):
         modificarReceta(toplevel, self.ruta)
 
     def mostrar_recetas(self):
-        """Funcion para mostrar todas las recetas"""
-        recetas = self._read()
+        """Funcion para mostrar todas las recetas que contiene que archvo JSON"""
         toplevel = tk.Toplevel(self.parent)
         filtrarReceta(toplevel, self.ruta)
 

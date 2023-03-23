@@ -42,7 +42,7 @@ class Principal(ttk.Frame):
             #llamada a nueva clase para nueva ventana. 
             toplevel = tk.Toplevel(self.parent)
             Secundaria(toplevel, self.ruta, self.recetaAModificar.get()).grid()
-            # self.parent.destroy()
+            # self.parent.destroy() PREGUNTAR PROFE
         else:
             messagebox.showerror(message=f"Debe seleccionar una opcion correcta :)")
             

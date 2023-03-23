@@ -11,7 +11,6 @@ class App(ttk.Frame):
         self.parent = parent # referencia a la ventana ppal
         parent.configure(bg='black')
         parent.title("MODIFICAR RECETA")
-        # parent.resizable(False, False)
         self.ruta= ruta
         self.nombreModificar = nombre
         
@@ -61,9 +60,9 @@ class App(ttk.Frame):
         
         # ingredientes
         ttk.Label(self.parent, text="Ingredientes: ", bootstyle="inverse-dark", padding=3).grid(row=2, column=1, padx=5, pady=5)
-        # ttk.Entry(self.parent, textvariable=self.ingredientes).grid(row=2, column=2)
+        
         self.comboIngredientes = ttk.Combobox(self.parent, textvariable=self.ingredientes, values=self.listaIngredientes, state="readonly")
-        #, state="readonly"
+        
         self.comboIngredientes.grid(row=2, column=2, ipadx=20, padx=5, pady=5)
         self.comboIngredientes.current(0)
         
@@ -73,9 +72,9 @@ class App(ttk.Frame):
         
         # pasos de preparacion
         ttk.Label(self.parent, text="Seleccionar un paso y modificarlo: ", bootstyle="inverse-dark", padding=3).grid(row=3, column=1, padx=5, pady=5)
-        # ttk.Entry(self.parent,textvariable=self.pasos).grid(row=3, column=2)
+        
         self.comboPasos = ttk.Combobox(self.parent, textvariable=self.pasos, values=self.listaPasos, state="readonly")
-        #, state="readonly"
+        
         self.comboPasos.grid(row=3, column=2, ipadx=20, pady=5)
         self.comboPasos.current(0)
         
@@ -94,7 +93,7 @@ class App(ttk.Frame):
         # etiquetas
         ttk.Label(self.parent, text="Etiquetas: ", bootstyle="inverse-dark", padding=3).grid(row=7, column=1, padx=5, pady=5)
         self.comboEtiquetas = ttk.Combobox(self.parent, textvariable=self.etiquetas, values=self.listaEtiquetas, state="readonly")
-        #, state="readonly"
+        
         self.comboEtiquetas.grid(row=7,column=2, ipadx=20, pady=5)
         self.comboEtiquetas.current(0)
         
@@ -122,11 +121,6 @@ Las etiquetas deben estar separadas por coma y un espacio, así:
         '''
         ttk.Label(self.parent, text=texto, bootstyle="inverse-dark", padding=3).grid(row=10, column=1, columnspan=4, pady=10)
 
-        # BINDS PARA LOS COMBOBOX
-        # self.comboIngredientes.bind("<<ComboboxSelected>>", self.mostrarIngrediente)
-        # self.comboPasos.bind("<<ComboboxSelected>>", self.mostrarPaso)
-        # self.comboEtiquetas.bind("<<ComboboxSelected>>", self.mostrarEtiqueta)
-
     def _read(self):
         """Lee el archivo JSON"""
         with open(self.ruta, 'r') as archivo:
@@ -153,9 +147,8 @@ Las etiquetas deben estar separadas por coma y un espacio, así:
             
             # se reemplaza el valor de la receta anterior con la nueva info
             index = data.index(self.receta)
-            # print(index)
             data[index] = recetaNueva
-            # print(recetaNueva)
+            
             try: 
                 with open(self.ruta, 'w') as archivo:
                     json.dump(data, archivo)
@@ -184,8 +177,7 @@ Las etiquetas deben estar separadas por coma y un espacio, así:
         
     def _formatearIngredientes(self): #listo
         """se realizan dos split para obtener una lista de ingredientes (diccionarios) correctamente."""
-        # print(self.listaIngredientes[2])
-        # print(self.listaIngredientes[2].replace(':', '').split(" "))
+        
         #esta variable, va a ser una lista que contiene diccionarios con tres claves de los ingredientes.
         if self.ingredienteNuevo.get() != '':
             
