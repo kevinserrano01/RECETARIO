@@ -1,0 +1,145 @@
+[
+    {
+        "nombre": "Pastel de chocolate",
+        "ingredientes": [
+            {
+                "nombre": "Chocolate",
+                "cantidad": "negro",
+                "unidad": "200"
+            },
+            {
+                "nombre": "Mantequilla",
+                "cantidad": "200",
+                "unidad": "Gramos"
+            },
+            {
+                "nombre": "Azucar",
+                "cantidad": "200",
+                "unidad": "Gramos"
+            },
+            {
+                "nombre": "Huevos",
+                "cantidad": "4",
+                "unidad": "Unidades"
+            }
+        ],
+        "preparacion": [
+            "Precalentar el horno a 180 grados celsius.",
+            "Fundir el chocolate y la mantequilla al banioo maria.",
+            "Batir los huevos con el azucar hasta que esten espumosos.",
+            "Aniadir la mezcla de chocolate y mantequilla a los huevos y mezclar bien.",
+            "Verter la mezcla en un molde previamente engrasado y hornear durante 30 minutos.",
+            "Dejar enfriar antes de desmoldar."
+        ],
+        "imagen": "images/pastelDeChocolate.jpg",
+        "tiempo_preparacion": 20,
+        "tiempo_coccion": 30,
+        "fecha_creacion": "2022/03/09",
+        "etiquetas": [
+            "Postres",
+            "Chocolate",
+            "Facil"
+        ],
+        "favorita": false
+    },
+    {
+        "nombre": "Empanadas Arabes",
+        "ingredientes": [
+            {
+                "nombre": "Harina",
+                "cantidad": "1",
+                "unidad": "Kg"
+            },
+            {
+                "nombre": "Levadura",
+                "cantidad": "20",
+                "unidad": "Gr"
+            },
+            {
+                "nombre": "Sal",
+                "cantidad": "20",
+                "unidad": "Gr"
+            },
+            {
+                "nombre": "Aceite",
+                "cantidad": "de",
+                "unidad": "Oliva"
+            },
+            {
+                "nombre": "Agua",
+                "cantidad": "600",
+                "unidad": "Cc"
+            }
+        ],
+        "preparacion": [
+            "Colocar la harina y la sal en la mesada en forma de corona.",
+            "Agregar el aceite de oliva, la levadura fresca y el agua para empezar a amasar.",
+            "El bollo estar\u00e3\u00a1 listo una vez que est\u00e3\u00a9 liso. hacer peque\u00e3\u00b1os bollos de unos 100 gramos.",
+            "Mezclar en un bol carne picada, cebolla picada, tomate en cubos, morr\u00e3\u00b3n rojo picado, cebolla de verdeo, jugo y ralladura de lim\u00e3\u00b3n, salsa de tomate.",
+            "Agregar tambi\u00e3\u00a9n sal y especias a gusto.",
+            "Estirar los bollos con un palo de amasar en c\u00e3\u00adrculos de unos 15 cent\u00e3\u00admetros.",
+            "Cerrar doblando los bordes hacia el centro.",
+            "Colocar una placa levemente aceitada y llevar al horno a 180\u00e2\u00ba por unos 15 minutos"
+        ],
+        "imagen": "images/EmpanadasArabes.jpg",
+        "tiempo_preparacion": 40,
+        "tiempo_coccion": 15,
+        "fecha_creacion": "2022/03/10",
+        "etiquetas": [
+            "Empanadas",
+            "Arabes",
+            "Casero"
+        ],
+        "favorita": false
+    },
+    {
+        "nombre": "Arroz con pollo",
+        "ingredientes": [
+            {
+                "nombre": "Arroz",
+                "cantidad": "2",
+                "unidad": "Tazas"
+            },
+            {
+                "nombre": "Pollo",
+                "cantidad": "1",
+                "unidad": "Libras"
+            },
+            {
+                "nombre": "Cebolla",
+                "cantidad": "1",
+                "unidad": "Unidades"
+            },
+            {
+                "nombre": "Ajo",
+                "cantidad": "2",
+                "unidad": "Dientes"
+            },
+            {
+                "nombre": "Pimiento",
+                "cantidad": "1",
+                "unidad": "Unidades"
+            }
+        ],
+        "preparacion": [
+            "En una olla grande, calentar el aceite a fuego medio.",
+            "Agregar el pollo y dorar por ambos lados.",
+            "Agregar la cebolla, el ajo y el pimiento y cocinar hasta que esten suaves.",
+            "Agregar el arroz y mezclar bien.",
+            "Agregar suficiente agua para cubrir el arroz (aproximadamente 4 tazas).",
+            "Llevar a ebullicion y reducir el fuego a bajo.",
+            "Cocinar tapado durante 20 minutos.",
+            "Retirar del fuego y dejar reposar durante 10 minutos antes de servir."
+        ],
+        "imagen": "images/arrozConPollo.png",
+        "tiempo_preparacion": 30,
+        "tiempo_coccion": 20,
+        "fecha_creacion": "2022/03/10",
+        "etiquetas": [
+            "Arroz",
+            "Pollo",
+            "Plato principal"
+        ],
+        "favorita": false
+    }
+]
